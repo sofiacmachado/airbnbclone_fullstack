@@ -93,7 +93,7 @@ render () {
       <form onSubmit={this.submitBooking}>
         <h5>${price_per_night} <small>per night</small></h5>
         <hr/>
-        <div className="mb-5">
+        <div style={{ marginBottom: focusedInput ? '400px': '2rem' }}>
           <DateRangePicker
             startDate={startDate} // momentPropTypes.momentObj or null,
             startDateId="start_date" // PropTypes.string.isRequired,
@@ -102,10 +102,11 @@ render () {
             onDatesChange={this.onDatesChange}
             focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
             onFocusChange={this.onFocusChange} // PropTypes.func.isRequired,
-            isDayBlocked={this.state.focusedInput === 'startDate'
-            ? this.isDayBlockedStart
-            : isDayBlockedEnd
-            } // block already booked dates
+            isDayBlocked={
+                this.state.focusedInput === 'startDate'
+                  ? this.isDayBlockedStart
+                  : this.isDayBlockedEnd
+              } // block already booked dates
             numberOfMonths={1}
           />
         </div>
