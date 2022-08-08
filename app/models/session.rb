@@ -1,7 +1,5 @@
 class Session < ApplicationRecord
   belongs_to :user
-  has_many :bookings
-
   validates :user, presence: true
 
   before_validation :generate_session_token

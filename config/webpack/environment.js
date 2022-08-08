@@ -1,5 +1,6 @@
 const { environment } = require('@rails/webpacker')
 
+
 const path = require('path')
 
 const customConfig = {
@@ -10,6 +11,20 @@ const customConfig = {
     }
   }
 }
+
+const webpack = require('webpack')
+
+environment.plugins.prepend(
+  "Environment",
+  new webpack.EnvironmentPlugin(
+    JSON.parse(
+      JSON.stringify({
+        STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
+        URL: process.env.URL
+      })
+    )
+  )
+);
 
 environment.config.merge(customConfig);
 
