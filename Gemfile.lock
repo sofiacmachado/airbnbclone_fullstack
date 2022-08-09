@@ -80,6 +80,10 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -163,6 +167,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.2.1)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -189,7 +196,11 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
-    stripe (5.43.0)
+    stripe (7.0.0)
+    stripe-rails (2.3.4)
+      rails (>= 5.1)
+      responders
+      stripe (>= 3.15.0)
     thor (1.2.1)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -224,6 +235,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  dotenv-rails
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
@@ -235,7 +247,7 @@ DEPENDENCIES
   selenium-webdriver (>= 4.0.0.rc1)
   spring
   sqlite3 (~> 1.4.2)
-  stripe
+  stripe-rails
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
