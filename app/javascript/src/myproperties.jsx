@@ -106,9 +106,17 @@ class Myproperties extends React.Component {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
     <Myproperties />,
     document.body.appendChild(document.createElement("div"))
   );
-});
+}); */
+
+
+ReactDOM.render(
+    <React.StrictMode>
+      <Myproperties />
+    </React.StrictMode>,
+    document.body.appendChild(document.createElement("div"))
+    );
