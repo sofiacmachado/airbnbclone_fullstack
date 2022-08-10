@@ -300,9 +300,16 @@ class Add extends React.Component {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
     <Add />,
     document.body.appendChild(document.createElement("div"))
   );
-});
+}); */
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Add />
+  </React.StrictMode>,
+  document.body.appendChild(document.createElement("div"))
+  );
