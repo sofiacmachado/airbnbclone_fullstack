@@ -12,6 +12,11 @@ const Layout = (props) => {
               <li className="nav-item">
                 <a className="nav-link" href="/">Home</a>
               </li>
+              <li>
+              <a className="nav-link" href="/myproperties">
+                My properties
+              </a>
+            </li>
             </ul>
           </div>
         </div>
