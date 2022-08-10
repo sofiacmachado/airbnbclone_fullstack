@@ -148,6 +148,7 @@ class Add extends React.Component {
                   onChange={this.handlePropertyTypeChange}
                   value={this.state.property_type}
                 >
+                  <option></option> 
                   <option>Shared Room In Apartment</option>
                   <option>Private Room In Apartment</option>
                   <option>Whole Apartment</option>
