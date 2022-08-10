@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/myproperties' => 'static_pages#myproperties'
   get '/myproperties/add' => 'static_pages#add'
   get '/host' => 'static_pages#host'
+  get '/trips' => 'static_pages#trips'
   
 
   namespace :api do

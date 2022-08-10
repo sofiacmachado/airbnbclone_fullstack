@@ -21,4 +21,8 @@ class StaticPagesController < ApplicationController
     render 'host'
   end
   
+  def trips
+    render 'trips'
+  end
+  
 end
