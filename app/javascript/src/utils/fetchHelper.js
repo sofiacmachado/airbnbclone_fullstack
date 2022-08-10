@@ -32,11 +32,24 @@
   * Lets fetch include credentials in the request. This includes cookies and other possibly sensitive data.
   * Note: Never use for requests across (untrusted) domains.
   */
-  export function safeCredentials(options = {}) {
+   export function safeCredentials(options = {}) {
     return Object.assign(options, {
-      credentials: 'include',
-      mode: 'same-origin',
-      headers: Object.assign((options.headers || {}), authenticityHeader(), jsonHeader()),
+      credentials: "include",
+      mode: "same-origin",
+      headers: Object.assign(
+        options.headers || {},
+        authenticityHeader(),
+        jsonHeader()
+      ),
+    });
+  }
+  
+  // In fetchHelper.js
+  export function safeCredentialsForm(options = {}) {
+    return Object.assign(options, {
+      credentials: "include",
+      mode: "same-origin",
+      headers: Object.assign(options.headers || {}, authenticityHeader()),
     });
   }
   

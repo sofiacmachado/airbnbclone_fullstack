@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import Layout from '@src/layout';
 import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 
-import './add.scss';
-
 class Add extends React.Component {
   constructor(props) {
     super(props);

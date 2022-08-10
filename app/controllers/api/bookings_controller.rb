@@ -30,6 +30,34 @@ module Api
 
         render 'api/bookings/show', status: :ok
     end
+
+    def index
+      token = cookies.signed[:airbnb_session_token]
+      session = Session.find_by(token: token)
+      return render json: { error: 'user is not logged in'}, status: :unauthorized if !session
+
+      @bookings = Booking.where(user_id: session.user.id).where("end_date > ?", Date.today).order(start_date: :asc)
+      return render json: { error: 'not_found'}, status: :not_found if !@bookings
+
+      render 'api/bookings/index', status: :ok
+    end
+
+    def byuser
+      token = cookies.signed[:airbnb_session_token]
+      session = Session.find_by(token: token)
+      return render json: { error: 'user is not logged in'}, status: :unauthorized if !session
+
+     
+      properties = Property.where(user_id: session.user.id)
+      return render json: {error: 'no properties found'}, status: :not_found if !properties
+
+      
+      @bookings = Booking.where(property: properties).order(start_date: :asc)
+      return render json: {error: 'properties do not have any bookings'}, status: :not_found if !@bookings
+
+      render 'api/bookings/byuser'
+
+    end
   
       private
   

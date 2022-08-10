@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '@src/layout';
 import ReactDOM from 'react-dom';
 import BookingWidget from './bookingWidget';
-import { handleErrors } from '@utils/fetchHelper';
+import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 
 import './property.scss';
 class Property extends React.Component {
