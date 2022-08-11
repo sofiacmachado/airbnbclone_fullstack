@@ -1,5 +1,8 @@
 module Api
     class BookingsController < ApplicationController
+      
+      include ActiveStorage::SetCurrent
+
       def create
         token = cookies.signed[:airbnb_session_token]
         session = Session.find_by(token: token)
