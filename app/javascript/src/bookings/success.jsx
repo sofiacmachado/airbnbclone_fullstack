@@ -76,13 +76,13 @@ class Success extends React.Component {
                       <small>from <b>{start_date}</b> to <b>{" "}{end_date}</b></small>
                     </p>
                     <p className="card-text">
-                      <span className="mr-3">
+                      <span className="me-3">
                         <b>Bedrooms:</b> {property.bedrooms}
                       </span>
-                      <span className="mr-3">
+                      <span className="me-3">
                         <b>Beds:</b> {property.beds}
                       </span>
-                      <span className="mr-3">
+                      <span className="me-3">
                         <b>Baths:</b> {property.baths}
                       </span>
                     </p>
@@ -92,9 +92,9 @@ class Success extends React.Component {
                     <h2 className="mt-4">
                       Payment Status:{" "}
                       {booking.paid === true ? (
-                        <span className="ml-2 text-success">Paid</span>
+                        <span className="ms-2 text-success">Paid</span>
                       ) : (
-                        <span className="ml-2 text-danger">Unpaid</span>
+                        <span className="ms-2 text-danger">Unpaid</span>
                       )}
                     </h2>
                     <h2>Amount: $ {charges[0].amount}</h2>

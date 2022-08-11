@@ -204,7 +204,7 @@ class Property extends React.Component {
                 <div className="row">
                   <div className="info col-12">
                     <div className="mb-3">
-                      <label htmlFor="inputTitle">Title</label>
+                      <label className="mb-1" htmlFor="inputTitle">Title</label>
                       <input
                         type="text"
                         className="form-control"
@@ -216,7 +216,7 @@ class Property extends React.Component {
                       />
                       <div className="form-row">
                         <div className="form-group col-md-6">
-                          <label htmlFor="inputCity">City</label>
+                          <label className="mb-1" htmlFor="inputCity">City</label>
                           <input
                             type="text"
                             className="form-control"
@@ -228,7 +228,7 @@ class Property extends React.Component {
                           />
                         </div>
                         <div className="form-group col-md-6">
-                          <label htmlFor="inputCountry">Country</label>
+                          <label className="mb-1" htmlFor="inputCountry">Country</label>
                           <input
                             type="text"
                             className="form-control"
@@ -249,7 +249,7 @@ class Property extends React.Component {
                     <div className="row">
                       <div className="col">
                         <p className="mb-0 text-capitalize">
-                          <label htmlFor="inputType">
+                          <label className="mb-1" htmlFor="inputType">
                             Type of Accommodation
                           </label>
                           <select
@@ -265,7 +265,7 @@ class Property extends React.Component {
                         </p>
                         <div className="form-row">
                           <div className="form-group col">
-                            <label htmlFor="inputMaxGuests">Max guests</label>
+                            <label className="mb-1" htmlFor="inputMaxGuests">Max guests</label>
                             <select
                               id="inputMaxGuests"
                               className="form-control"
@@ -286,7 +286,7 @@ class Property extends React.Component {
                             </select>
                           </div>
                           <div className="form-group col">
-                            <label htmlFor="inputBedroom">Bedrooms</label>
+                            <label className="mb-1" htmlFor="inputBedroom">Bedrooms</label>
                             <select
                               id="inputBedroom"
                               className="form-control"
@@ -303,7 +303,7 @@ class Property extends React.Component {
                             </select>
                           </div>
                           <div className="form-group col">
-                            <label htmlFor="inputBed">Beds</label>
+                            <label className="mb-1" htmlFor="inputBed">Beds</label>
                             <select
                               id="inputBed"
                               className="form-control"
@@ -320,7 +320,7 @@ class Property extends React.Component {
                             </select>
                           </div>
                           <div className="form-group col">
-                            <label htmlFor="inputBath">Baths</label>
+                            <label className="mb-1" htmlFor="inputBath">Baths</label>
                             <select
                               id="inputBath"
                               className="form-control"
@@ -337,7 +337,7 @@ class Property extends React.Component {
                             </select>
                           </div>
                         </div>
-                        <label htmlFor="inputPrice">Price</label>
+                        <label className="mb-1" htmlFor="inputPrice">Price</label>
                         <input
                           type="number"
                           className="form-control"
@@ -363,7 +363,7 @@ class Property extends React.Component {
                     </div>
                     <hr />
                     <p>
-                      <label htmlFor="inputDescription">Description</label>
+                      <label className="mb-1" htmlFor="inputDescription">Description</label>
                       <textarea
                         type="text"
                         className="form-control"
@@ -378,11 +378,15 @@ class Property extends React.Component {
                   </div>
 
                   <div className="col-11">
-                    <button type="submit" className="btn btn-primary mr-2">
+                    <button type="submit" className="btn btn-primary me-2">
                       Update property
                     </button>
+                    <button className="btn btn-danger me-2"
+                     onClick={((e) => e, this.cancelEdit)}>
+                      Remove property
+                    </button>
                     <button
-                      className="btn btn-outline-secondary ml-2"
+                      className="btn btn-outline-secondary ms-2"
                       onClick={((e) => e, this.cancelEdit)}
                     >
                       Cancel
@@ -413,10 +417,10 @@ class Property extends React.Component {
                       <b>{property_type}</b>
                     </p>
                     <p>
-                      <span className="mr-3">{max_guests} guests</span>
-                      <span className="mr-3">{bedrooms} bedroom</span>
-                      <span className="mr-3">{beds} bed</span>
-                      <span className="mr-3">{baths} bath</span>
+                      <span className="me-3">{max_guests} guests</span>
+                      <span className="me-3">{bedrooms} bedroom</span>
+                      <span className="me-3">{beds} bed</span>
+                      <span className="me-3">{baths} bath</span>
                     </p>
                   </div>
                   <div className="col-3">

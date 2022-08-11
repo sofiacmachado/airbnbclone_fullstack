@@ -63,11 +63,11 @@ class Trips extends React.Component {
                               <p>
                                 Payment status:{" "}
                                 {booking.paid === true ? (
-                                  <small className="ml-1 text-success">
+                                  <small className="ms-1 text-success">
                                     <b>Paid</b>
                                   </small>
                                 ) : (
-                                  <small className="ml-1 text-danger">
+                                  <small className="ms-1 text-danger">
                                     <b>Pending</b>
                                   </small>
                                 )}
