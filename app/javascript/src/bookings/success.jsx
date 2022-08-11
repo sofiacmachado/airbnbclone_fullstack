@@ -59,13 +59,13 @@ class Success extends React.Component {
         <div className="container pt-4">
           <div className="row">
             <div className="col-12 my-4">
-              <div className="card-body border">
-                <h3 className="card-title text-center mb-3">
+              <div className="card-body border rounded px-4">
+                <h1 className="card-title text-center mb-3">
                   You're reservation is confirmed #{booking.id}
-                </h3>
+                </h1>
                 <div className="row">
                   <div
-                    className="col-6 property-image mb-3"
+                    className="col-6 property-image border rounded mb-3"
                     style={{ backgroundImage: `url(${property.image_url})` }}
                   />
                   <div className="col-6">
@@ -89,17 +89,17 @@ class Success extends React.Component {
                     <p className="card-text mt-2 mb-4 text-justify">
                       {property.description}
                     </p>
-                    <h5 className="mt-4">
+                    <h2 className="mt-4">
                       Payment Status:{" "}
                       {booking.paid === true ? (
                         <span className="ml-2 text-success">Paid</span>
                       ) : (
                         <span className="ml-2 text-danger">Unpaid</span>
                       )}
-                    </h5>
-                    <p>Amount: $ {charges[0].amount}</p>
+                    </h2>
+                    <h2>Amount: $ {charges[0].amount}</h2>
                     {booking.paid === true ? (
-                      <a href="#" className="btn btn-success disabled">
+                      <a href="#" className="btn btn-success disabled pay-btn-success">
                         Pay now
                       </a>
                     ) : (
