@@ -1,6 +1,7 @@
 // layout.js
 import React from 'react';
 import { handleErrors } from '@utils/fetchHelper';
+import './layout.scss';
 
 class Layout extends React.Component {
 
@@ -75,12 +76,12 @@ class Layout extends React.Component {
               </ul>
               <ul className="navbar-nav me-2">
                 <li className={this.state.loginClassName} >
-                  <a className="nav-link" href="/login">
+                  <a className="nav-link log-in" href="/login">
                     Log in
                   </a>
                 </li>
                 <li className={this.state.logoutClassName} >
-                  <a className="nav-link" href="" onClick={this.doLogout}>
+                  <a className="nav-link log-out" href="" onClick={this.doLogout}>
                     Log out
                   </a>
                 </li>

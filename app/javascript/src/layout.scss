@@ -1,0 +1,22 @@
+  .navbar-brand {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+  }
+  
+  .nav-link {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 200;
+  }
+
+  .log-in, .log-out {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: thin;
+  }
+
+  .log-in {
+    border-color: rgb(78, 197, 78);
+  }
+  .log-out {
+    border-color: rgb(248, 97, 97);
+  }
