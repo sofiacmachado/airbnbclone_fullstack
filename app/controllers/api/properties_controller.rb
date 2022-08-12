@@ -73,6 +73,11 @@ module Api
           property = Property.find_by(id: params[:id])
     
           if property
+            bookings = Booking.where(property_id:property.id)
+            bookings.each do |b|
+              Charge.where(booking_id:b.id).destroy_all
+              b.destroy
+            end
             property.destroy
             render json: { success: true }, status: :ok
           end
