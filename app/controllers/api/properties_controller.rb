@@ -1,6 +1,9 @@
 module Api
     class PropertiesController < ApplicationController
 
+      protect_from_forgery with: :null_session
+      skip_before_action :verify_authenticity_token
+
       include ActiveStorage::SetCurrent
 
         def index
@@ -61,10 +64,23 @@ module Api
             end
         end
 
-        private
-
         def property_params
           params.require(:property).permit(:title, :description, :city, :country, :property_type, :price_per_night, :max_guests, :bedrooms, :beds, :baths, :image)
         end
+        
+        def destroy
+          token = cookies.signed[:airbnb_session_token]
+          property = Property.find_by(id: params[:id])
+    
+          if property
+            property.destroy
+            render json: { success: true }, status: :ok
+          end
+        end
+
+      
+        
+        private
+
     end
   end

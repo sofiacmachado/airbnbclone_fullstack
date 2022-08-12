@@ -7,6 +7,9 @@ import { handleErrors, safeCredentialsForm } from '@utils/fetchHelper';
 
 import './property.scss';
 class Property extends React.Component {
+
+
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +34,7 @@ class Property extends React.Component {
 
     this.editMode = this.editMode.bind(this);
     this.cancelEdit = this.cancelEdit.bind(this);
+    this.removeProperty = this.removeProperty.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handlePropertyTypeChange = this.handlePropertyTypeChange.bind(this);
     this.handleCityChange = this.handleCityChange.bind(this);
@@ -166,6 +170,20 @@ class Property extends React.Component {
         console.log(error);
       });
   };
+
+  
+  removeProperty = (e) => {
+    e.preventDefault(); 
+    fetch(`/api/properties/${this.props.property_id}`, {
+      method: 'DELETE',
+    })
+    .then(handleErrors)
+    .then(data => {
+      window.location = '/myproperties';
+    });
+    return false;
+  }
+
 
   render() {
     const {
@@ -382,7 +400,7 @@ class Property extends React.Component {
                       Update property
                     </button>
                     <button className="btn btn-danger me-2"
-                     onClick={((e) => e, this.cancelEdit)}>
+                     onClick={((e) => e, this.removeProperty)}>
                       Remove property
                     </button>
                     <button
