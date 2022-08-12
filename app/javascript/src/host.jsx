@@ -106,7 +106,7 @@ class Host extends React.Component {
                   <a href={`/login?redirect_url=${window.location.pathname}`}>
                     log in
                   </a>{" "}
-                  to see your properties.
+                  to see your property bookings.
                 </p>
               </div>
             </div>
