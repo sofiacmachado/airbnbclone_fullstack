@@ -1,5 +1,8 @@
 module Api
   class SessionsController < ApplicationController
+    protect_from_forgery with: :null_session
+    skip_before_action :verify_authenticity_token
+
     def create
       @user = User.find_by(email: params[:user][:email])
 
@@ -18,10 +21,10 @@ module Api
 
     def authenticated
       token = cookies.signed[:airbnb_session_token]
-      session = Session.find_by(token: token)
+      @session = Session.find_by(token: token)
 
-      if session
-        @user = session.user
+      if @session
+        @user = @session.user
         render 'api/sessions/authenticated', status: :ok
       else
         render json: { authenticated: false }, status: :bad_request
@@ -32,7 +35,8 @@ module Api
       token = cookies.signed[:airbnb_session_token]
       session = Session.find_by(token: token)
 
-      if session and session.destroy
+      if session
+        session.destroy
         render json: { success: true }, status: :ok
       end
     end
