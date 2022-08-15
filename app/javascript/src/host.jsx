@@ -43,7 +43,7 @@ class Host extends React.Component {
                     bookings.map((booking) => {
                       return (
                         <a
-                          href={`property/${booking.property_id}`}
+                          href={`booking/${booking.id}/hostbooking`}
                           key={booking.id}
                           class="list-group-item list-group-item-action"
                         >

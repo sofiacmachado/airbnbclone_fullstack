@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/property/:id' => 'static_pages#property'
   get '/login' => 'static_pages#login'
   get '/booking/:id/success' => 'static_pages#success'
+  get '/booking/:id/hostbooking' => 'static_pages#hostbooking'
   get '/myproperties' => 'static_pages#myproperties'
   get '/myproperties/add' => 'static_pages#add'
   get '/host' => 'static_pages#host'

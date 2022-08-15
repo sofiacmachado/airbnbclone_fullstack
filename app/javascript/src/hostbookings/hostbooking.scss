@@ -1,0 +1,50 @@
+.property-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    @media (min-width: 768px) {
+      height: 400px;
+    }
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem; 
+    font-weight: 300;
+    
+  }
+
+  h5 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  b {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+
+  .pay-btn {
+    width: 100%;
+  }
+
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
