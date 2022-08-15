@@ -16,11 +16,16 @@ json.booking do
         json.bedrooms @booking.property.bedrooms
         json.beds @booking.property.beds
         json.baths @booking.property.baths
+
         if @booking.property.image.attached?
             json.image_url @booking.property.image.blob.service_url
           else
             json.image_url @booking.property.image_url
         end
+    end
+
+    json.user do
+        json.username @booking.user.username
     end
 
     json.charges @booking.charges

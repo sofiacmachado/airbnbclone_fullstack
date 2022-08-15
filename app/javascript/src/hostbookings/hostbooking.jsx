@@ -69,7 +69,7 @@ class HostBooking extends React.Component {
                     style={{ backgroundImage: `url(${property.image_url})` }}
                   />
                   <div className="col-6">
-                    <h5 className="mb-1">There's a reservation from {property.user_username}</h5>
+                    <h2 className="mb-1">There's a reservation from <u>{booking.user.username}</u></h2>
                     <h5><b>{start_date}</b> to <b>{" "}{end_date}</b></h5>
                     <p className="card-text text-uppercase mb-2 text-secondary">
                       <small>{property.city}</small>
@@ -87,16 +87,16 @@ class HostBooking extends React.Component {
                       </span>
                     </p>
                     <p className="card-text mt-2 mb-4 text-justify">
-                      {property.description}
+                      <i>{property.description}</i>
                     </p>
-                    <h2 className="mt-4">
+                    <h5 className="mt-4">
                       Payment Status:{" "}
                       {booking.paid === true ? (
                         <span className="ms-2 text-success">Paid</span>
                       ) : (
                         <span className="ms-2 text-danger">Unpaid</span>
                       )}
-                    </h2>
+                    </h5>
                   </div>
                 </div>
               </div>
