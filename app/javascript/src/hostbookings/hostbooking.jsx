@@ -89,6 +89,14 @@ class HostBooking extends React.Component {
                     <p className="card-text mt-2 mb-4 text-justify">
                       <i>{property.description}</i>
                     </p>
+                    <p className="card-text mt-2 mb-4 text-justify">
+                      <b>Total:{" "}
+                                  {booking.charges.length !== 0 ? (
+                                    <span>${booking.charges[0].amount}</span>
+                                  ) : (
+                                    <span>N/A</span>
+                                  )}</b>
+                    </p>
                     <h5 className="mt-4">
                       Payment Status:{" "}
                       {booking.paid === true ? (
