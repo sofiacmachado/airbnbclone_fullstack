@@ -37,6 +37,7 @@ class Layout extends React.Component {
     })
     .then(handleErrors)
     .then(data => {
+      window.location = '/';
       this.setState({
         authenticated: false,
         sessionId: 0,
@@ -81,7 +82,7 @@ class Layout extends React.Component {
                   </a>
                 </li>
                 <li className={this.state.logoutClassName} >
-                  <a className="nav-link log-out" href="" onClick={this.doLogout}>
+                  <a className="nav-link log-out" href="/" onClick={this.doLogout}>
                     Log out
                   </a>
                 </li>

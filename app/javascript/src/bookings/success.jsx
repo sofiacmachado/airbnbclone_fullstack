@@ -99,14 +99,14 @@ class Success extends React.Component {
                     </h2>
                     <h2>Amount: $ {charges[0].amount}</h2>
                     {booking.paid === true ? (
-                      <a href="#" className="btn btn-success disabled pay-btn-success">
+                      <a href="#" className="btn btn-success d-none disabled pay-btn">
                         Pay now
                       </a>
                     ) : (
                       <a
                         href=""
                         onClick={(e) => this.initiateStripeCheckout(e, id)}
-                        className="btn btn-primary text-white"
+                        className="btn btn-primary text-white pay-btn"
                       >
                         Pay now
                       </a>
