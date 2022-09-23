@@ -42,11 +42,11 @@ class Host extends React.Component {
                   {bookings.length !== 0 ? (
                     bookings.map((booking) => {
                       return (
-                        <a
-                          href={`booking/${booking.id}/hostbooking`}
-                          key={booking.id}
-                          class="list-group-item list-group-item-action"
-                        >
+                          <a
+                            href={`booking/${booking.id}/hostbooking`}
+                            key={booking.id}
+                            class="list-group-item list-group-item-action"
+                          >
                           <div className="row">
                             <div
                               className="col-3 property-image mb-1 rounded"
